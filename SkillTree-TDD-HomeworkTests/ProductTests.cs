@@ -11,10 +11,10 @@ namespace SkillTree_TDD_HomeworkTests
     [TestClass]
     public class ProductTests
     {
-        private static Product[] _products;
+        private Product[] _products;
 
-        [ClassInitialize]
-        public static void ProductInitialize(TestContext testContext)
+        [TestInitialize]
+        public void ProductInitialize()
         {
             _products = new Product[] 
             {
@@ -32,8 +32,8 @@ namespace SkillTree_TDD_HomeworkTests
             };
         }
 
-        [ClassCleanup]
-        public static void ProductCleanup()
+        [TestCleanup]
+        public void ProductCleanup()
         {
             _products = null;
         }
